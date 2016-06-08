@@ -10,5 +10,3 @@ galaxy_info:
   categories:
    - system
 dependencies:           []
-github_user:            endeveit
-github_name:            ansible-aws-elasticache
