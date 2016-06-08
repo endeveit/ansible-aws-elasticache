@@ -1,5 +1,5 @@
 ---
-- name:                     "aws | Create elasticache instance"
+- name:                     "main | Create elasticache instance"
   elasticache:
     region:                 "{{ aws_elasticache_region }}"
     name:                   "{{ aws_elasticache_name }}"
