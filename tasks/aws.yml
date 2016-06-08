@@ -1,0 +1,17 @@
+---
+- name:                     "aws | Create elasticache instance"
+  elasticache:
+    region:                 "{{ aws_elasticache_region }}"
+    name:                   "{{ aws_elasticache_name }}"
+    state:                  "{{ aws_elasticache_state }}"
+    engine:                 "{{ aws_elasticache_engine }}"
+    node_type:              "{{ aws_elasticache_node_type }}"
+    num_nodes:              "{{ aws_elasticache_num_nodes }}"
+    wait:                   "{{ aws_elasticache_wait }}"
+    cache_port:             "{{ aws_elasticache_port }}"
+    # This should be empty for some regions
+    # see: https://groups.google.com/d/msg/ansible-project/AoFHHHR_rGk/U_WlqkrrqzMJ
+    cache_security_groups:  []
+    security_group_ids:     "{{ aws_elasticache_security_group_ids }}"
+  connection:               local
+  delegate_to:              localhost

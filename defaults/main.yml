@@ -1,0 +1,15 @@
+---
+aws_elasticache_ports:
+  memcache: 11211
+  redis:    6379
+
+aws_elasticache_region:             "{{ aws_region|default('eu-west-1') }}"
+aws_elasticache_name:               "aws-elasticache-ansible-provisioned"
+aws_elasticache_state:              present
+aws_elasticache_engine:             redis
+aws_elasticache_node_type:          cache.t2.micro
+aws_elasticache_num_nodes:          1
+aws_elasticache_wait:               yes
+aws_elasticache_cache_subnet_group: default
+aws_elasticache_port:               "{{ aws_elasticache_ports[aws_elasticache_engine] }}"
+aws_elasticache_security_group_ids: []
