@@ -13,5 +13,6 @@
     # see: https://groups.google.com/d/msg/ansible-project/AoFHHHR_rGk/U_WlqkrrqzMJ
     cache_security_groups:  []
     security_group_ids:     "{{ aws_elasticache_security_group_ids }}"
+  register:                 aws_elasticache_output
   connection:               local
   delegate_to:              localhost
